@@ -14,7 +14,7 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
 
 @Patch(
     name = "Disable fullscreen ambient mode",
-    description = "Disables the ambient mode when in fullscreen.",
+    description = "Adds an option to disable the ambient mode when in fullscreen.",
     dependencies = [SettingsPatch::class, IntegrationsPatch::class],
     compatiblePackages = [
         CompatiblePackage(
@@ -23,8 +23,10 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -34,7 +36,7 @@ object DisableFullscreenAmbientModePatch : BytecodePatch(
     setOf(InitializeAmbientModeFingerprint)
 ) {
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/DisableFullscreenAmbientModePatch;"
+        "Lapp/revanced/integrations/youtube/patches/DisableFullscreenAmbientModePatch;"
 
     override fun execute(context: BytecodeContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

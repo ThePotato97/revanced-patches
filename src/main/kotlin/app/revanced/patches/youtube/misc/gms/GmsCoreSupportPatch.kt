@@ -33,13 +33,9 @@ object GmsCoreSupportPatch : AbstractGmsCoreSupportPatch(
     compatiblePackages = setOf(
         CompatiblePackage(
             "com.google.android.youtube", setOf(
-                "18.32.39",
-                "18.37.36",
-                "18.38.44",
-                "18.43.45",
-                "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             )
         )
     ),
@@ -59,7 +55,7 @@ object GmsCoreSupportPatch : AbstractGmsCoreSupportPatch(
         // Check the availability of GmsCore.
         HomeActivityFingerprint.result?.mutableMethod?.addInstruction(
             0,
-            "invoke-static {}, Lapp/revanced/integrations/patches/GmsCoreSupport;->checkAvailability()V"
+            "invoke-static {}, Lapp/revanced/integrations/youtube/patches/GmsCoreSupport;->checkAvailability()V"
         ) ?: throw HomeActivityFingerprint.exception
 
         super.execute(context)

@@ -23,7 +23,7 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 @Patch(
     name = "Minimized playback",
-    description = "Enables minimized and background playback.",
+    description = "Unlocks options for picture-in-picture and background playback.",
     dependencies = [
         IntegrationsPatch::class,
         PlayerTypeHookPatch::class,
@@ -34,13 +34,9 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
         CompatiblePackage(
             "com.google.android.youtube",
             [
-                "18.32.39",
-                "18.37.36",
-                "18.38.44",
-                "18.43.45",
-                "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -53,7 +49,7 @@ object MinimizedPlaybackPatch : BytecodePatch(
         KidsMinimizedPlaybackPolicyControllerFingerprint
     )
 ) {
-    private const val INTEGRATIONS_CLASS_DESCRIPTOR = "Lapp/revanced/integrations/patches/MinimizedPlaybackPatch;"
+    private const val INTEGRATIONS_CLASS_DESCRIPTOR = "Lapp/revanced/integrations/youtube/patches/MinimizedPlaybackPatch;"
 
     override fun execute(context: BytecodeContext) {
         // TODO: remove this empty preference sometime after mid 2023

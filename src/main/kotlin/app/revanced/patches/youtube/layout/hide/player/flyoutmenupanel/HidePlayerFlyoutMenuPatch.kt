@@ -13,22 +13,27 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
 
 @Patch(
     name = "Player flyout menu",
-    description = "Hides player flyout menu items.",
+    description = "Adds options to hide menu items that appear when pressing the gear icon in the video player.",
     dependencies = [
         LithoFilterPatch::class,
         PlayerTypeHookPatch::class,
         SettingsPatch::class
     ],
     compatiblePackages = [
-        CompatiblePackage("com.google.android.youtube", [
-            "18.32.39",
-            "18.37.36",
-            "18.38.44",
-            "18.43.45",
-            "18.44.41",
-            "18.45.41",
-            "18.45.43"
-        ])
+        CompatiblePackage(
+            "com.google.android.youtube", [
+                "18.32.39",
+                "18.37.36",
+                "18.38.44",
+                "18.43.45",
+                "18.44.41",
+                "18.45.41",
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
+            ]
+        )
     ]
 )
 @Suppress("unused")
@@ -36,7 +41,7 @@ object HidePlayerFlyoutMenuPatch : ResourcePatch() {
     private const val KEY = "revanced_hide_player_flyout"
 
     private const val FILTER_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/components/PlayerFlyoutMenuItemsFilter;"
+        "Lapp/revanced/integrations/youtube/patches/components/PlayerFlyoutMenuItemsFilter;"
 
     override fun execute(context: ResourceContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

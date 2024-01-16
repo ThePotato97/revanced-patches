@@ -19,7 +19,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 @Patch(
     name = "Theme",
-    description = "Applies a custom theme.",
+    description = "Adds options for theming and applies a custom background theme (dark background theme defaults to amoled black).",
     dependencies = [
         LithoColorHookPatch::class,
         SeekbarColorBytecodePatch::class,
@@ -35,8 +35,10 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -46,7 +48,7 @@ object ThemeBytecodePatch : BytecodePatch(
     setOf(UseGradientLoadingScreenFingerprint)
 ) {
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/theme/ThemePatch;"
+        "Lapp/revanced/integrations/youtube/patches/theme/ThemePatch;"
 
     internal const val GRADIENT_LOADING_SCREEN_AB_CONSTANT = 45412406L
 

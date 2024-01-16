@@ -18,15 +18,17 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 @Patch(
     name = "Disable rolling number animations",
-    description = "Disables rolling number animations of video view count, user likes, and upload time.",
+    description = "Adds an option to disable rolling number animations of video view count, user likes, and upload time.",
     dependencies = [IntegrationsPatch::class, SettingsPatch::class],
     compatiblePackages = [
         CompatiblePackage(
             "com.google.android.youtube", [
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -38,7 +40,7 @@ object DisableRollingNumberAnimationPatch : BytecodePatch(
     )
 ) {
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/DisableRollingNumberAnimationsPatch;"
+        "Lapp/revanced/integrations/youtube/patches/DisableRollingNumberAnimationsPatch;"
 
     override fun execute(context: BytecodeContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

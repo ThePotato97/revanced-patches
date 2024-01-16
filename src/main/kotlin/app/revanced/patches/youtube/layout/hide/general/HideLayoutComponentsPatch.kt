@@ -24,7 +24,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 
 @Patch(
     name = "Hide layout components",
-    description = "Hides general layout components.",
+    description = "Adds options to hide general layout components.",
     dependencies = [
         LithoFilterPatch::class,
         SettingsPatch::class
@@ -37,8 +37,10 @@ import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -48,9 +50,9 @@ object HideLayoutComponentsPatch : BytecodePatch(
     setOf(ParseElementFromBufferFingerprint, PlayerOverlayFingerprint)
 ) {
     private const val LAYOUT_COMPONENTS_FILTER_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/components/LayoutComponentsFilter;"
+        "Lapp/revanced/integrations/youtube/patches/components/LayoutComponentsFilter;"
     private const val DESCRIPTION_COMPONENTS_FILTER_CLASS_NAME =
-        "Lapp/revanced/integrations/patches/components/DescriptionComponentsFilter;"
+        "Lapp/revanced/integrations/youtube/patches/components/DescriptionComponentsFilter;"
 
     override fun execute(context: BytecodeContext) {
         PreferenceScreen.LAYOUT.addPreferences(
@@ -97,7 +99,7 @@ object HideLayoutComponentsPatch : BytecodePatch(
                 "revanced_hide_search_result_recommendations",
                 StringResource(
                     "revanced_hide_search_result_recommendations_title",
-                    "Hide search result recommendations (e.g People also watched)"
+                    "Hide \\\'People also watched\\\' recommendations"
                 ),
                 StringResource(
                     "revanced_hide_search_result_recommendations_summary_on",

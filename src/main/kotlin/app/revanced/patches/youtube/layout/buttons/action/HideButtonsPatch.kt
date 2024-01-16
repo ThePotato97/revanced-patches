@@ -13,7 +13,7 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
 
 @Patch(
     name = "Hide video action buttons",
-    description = "Adds options to hide action buttons under a video.",
+    description = "Adds options to hide action buttons (such as the Download button) under videos.",
     dependencies = [
         ResourceMappingPatch::class,
         LithoFilterPatch::class
@@ -27,8 +27,10 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -36,7 +38,7 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
 @Suppress("unused")
 object HideButtonsPatch : ResourcePatch() {
     private const val FILTER_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/components/ButtonsFilter;"
+        "Lapp/revanced/integrations/youtube/patches/components/ButtonsFilter;"
 
     override fun execute(context: ResourceContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

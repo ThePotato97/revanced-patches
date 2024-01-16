@@ -29,7 +29,13 @@ import com.android.tools.smali.dexlib2.immutable.ImmutableField
 
 @Patch(
     description = "Adds custom playback speed options.",
-    dependencies = [IntegrationsPatch::class, LithoFilterPatch::class, SettingsPatch::class, RecyclerViewTreeHookPatch::class]
+    dependencies = [
+        IntegrationsPatch::class,
+        LithoFilterPatch::class,
+        SettingsPatch::class,
+        RecyclerViewTreeHookPatch::class,
+        CustomPlaybackSpeedResourcePatch::class
+    ]
 )
 object CustomPlaybackSpeedPatch : BytecodePatch(
     setOf(
@@ -40,10 +46,10 @@ object CustomPlaybackSpeedPatch : BytecodePatch(
     )
 ) {
     private const val FILTER_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/components/PlaybackSpeedMenuFilterPatch;"
+        "Lapp/revanced/integrations/youtube/patches/components/PlaybackSpeedMenuFilterPatch;"
 
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/playback/speed/CustomPlaybackSpeedPatch;"
+        "Lapp/revanced/integrations/youtube/patches/playback/speed/CustomPlaybackSpeedPatch;"
 
     override fun execute(context: BytecodeContext) {
         SettingsPatch.PreferenceScreen.VIDEO.addPreferences(

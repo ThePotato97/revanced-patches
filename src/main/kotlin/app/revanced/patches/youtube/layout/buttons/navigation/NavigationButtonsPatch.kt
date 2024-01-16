@@ -19,7 +19,7 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 @Patch(
     name = "Navigation buttons",
-    description = "Adds options to hide or change navigation buttons.",
+    description = "Adds options to hide and change navigation buttons (such as the Shorts button).",
     dependencies = [
         IntegrationsPatch::class,
         SettingsPatch::class,
@@ -34,8 +34,10 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -45,7 +47,7 @@ object NavigationButtonsPatch : BytecodePatch(
     setOf(AddCreateButtonViewFingerprint)
 ) {
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/NavigationButtonsPatch;"
+        "Lapp/revanced/integrations/youtube/patches/NavigationButtonsPatch;"
 
     override fun execute(context: BytecodeContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

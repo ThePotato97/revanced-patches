@@ -14,7 +14,7 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
 
 @Patch(
     name = "Disable resuming Shorts on startup",
-    description = "Disables resuming the Shorts player on app startup if a Short was last opened.",
+    description = "Adds an option to disable the Shorts player from resuming on app startup when Shorts were last being watched.",
     dependencies = [IntegrationsPatch::class, SettingsPatch::class],
     compatiblePackages = [
         CompatiblePackage(
@@ -24,8 +24,10 @@ import app.revanced.patches.youtube.misc.settings.SettingsPatch
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -36,7 +38,7 @@ object DisableResumingShortsOnStartupPatch : BytecodePatch(
 ) {
 
     private const val INTEGRATIONS_CLASS_DESCRIPTOR =
-        "Lapp/revanced/integrations/patches/DisableResumingStartupShortsPlayerPatch;"
+        "Lapp/revanced/integrations/youtube/patches/DisableResumingStartupShortsPlayerPatch;"
 
     override fun execute(context: BytecodeContext) {
         SettingsPatch.PreferenceScreen.LAYOUT.addPreferences(

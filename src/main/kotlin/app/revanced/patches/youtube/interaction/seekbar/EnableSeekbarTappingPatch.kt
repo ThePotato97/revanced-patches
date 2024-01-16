@@ -20,7 +20,7 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 @Patch(
     name = "Seekbar tapping",
-    description = "Enables tap-to-seek on the seekbar of the video player.",
+    description = "Adds an option to enable tap-to-seek on the seekbar of the video player.",
     dependencies = [
         IntegrationsPatch::class, SettingsPatch::class],
     compatiblePackages = [
@@ -29,8 +29,10 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
             [
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -85,7 +87,7 @@ object EnableSeekbarTappingPatch : BytecodePatch(
                 addInstructionsWithLabels(
                     insertIndex,
                     """
-                        invoke-static { }, Lapp/revanced/integrations/patches/SeekbarTappingPatch;->seekbarTappingEnabled()Z
+                        invoke-static { }, Lapp/revanced/integrations/youtube/patches/SeekbarTappingPatch;->seekbarTappingEnabled()Z
                         move-result v$freeRegister
                         if-eqz v$freeRegister, :disabled
                         ${oMethod.toInvokeInstructionString()}

@@ -14,7 +14,7 @@ import com.android.tools.smali.dexlib2.Opcode
 
 @Patch(
     name = "Hide captions button",
-    description = "Hides the captions button in the video player.",
+    description = "Adds an option to hide the captions button in the video player.",
     dependencies = [
         IntegrationsPatch::class,
         SettingsPatch::class
@@ -28,8 +28,10 @@ import com.android.tools.smali.dexlib2.Opcode
                 "18.38.44",
                 "18.43.45",
                 "18.44.41",
-                "18.45.41",
-                "18.45.43"
+                "18.45.43",
+                "18.48.39",
+                "18.49.37",
+                "19.01.34"
             ]
         )
     ]
@@ -58,7 +60,7 @@ object HideCaptionsButtonPatch : BytecodePatch(
         subtitleButtonControllerMethod.addInstruction(
             insertIndex,
             """
-                invoke-static {v0}, Lapp/revanced/integrations/patches/HideCaptionsButtonPatch;->hideCaptionsButton(Landroid/widget/ImageView;)V
+                invoke-static {v0}, Lapp/revanced/integrations/youtube/patches/HideCaptionsButtonPatch;->hideCaptionsButton(Landroid/widget/ImageView;)V
             """
         )
     }
