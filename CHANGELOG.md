@@ -1,3 +1,39 @@
+# [4.0.0](https://github.com/ThePotato97/revanced-patches/compare/v3.2.0...v4.0.0) (2024-01-16)
+
+
+### Bug Fixes
+
+* **Custom playback speed:** Update fingerprint ([6d60bfd](https://github.com/ThePotato97/revanced-patches/commit/6d60bfd4dafb6c747ff30c5b9790aeff01bb031e))
+* **FixBackToExitGesturePatch:** Restore compatibility with existing version targets ([e0633a0](https://github.com/ThePotato97/revanced-patches/commit/e0633a02a0c2e1810cd28860955a575700442dd2))
+* **Hide ads:** restore compatibility with prior targets ([cc79115](https://github.com/ThePotato97/revanced-patches/commit/cc791159d11c9c75938d6edd3762801c514f4359))
+* **ryd:** Update rolling number patch points ([46f28df](https://github.com/ThePotato97/revanced-patches/commit/46f28df331a557c4caee11df5e70880b2178943a))
+* Use new integrations patch path ([51e2f3b](https://github.com/ThePotato97/revanced-patches/commit/51e2f3b476b49460e2f3fc2b5f302a3a72d7963f))
+* **YouTube - Change header:** Improve patch descriptions ([#2581](https://github.com/ThePotato97/revanced-patches/issues/2581)) ([43a5677](https://github.com/ThePotato97/revanced-patches/commit/43a5677397380f14a049ae95532fd5096b94c938))
+* **YouTube - Enable slide to seek:** Change patch default to excluded and add description disclaimer ([#2610](https://github.com/ThePotato97/revanced-patches/issues/2610)) ([2fdc4c2](https://github.com/ThePotato97/revanced-patches/commit/2fdc4c23b5f39153ad71071359274c39129d691f))
+* **YouTube:** Shorten setting titles to fit on screen ([#2579](https://github.com/ThePotato97/revanced-patches/issues/2579)) ([b2a5dd3](https://github.com/ThePotato97/revanced-patches/commit/b2a5dd3efc39ae8a42159858b9c00b5b2f8655a4))
+
+
+### Code Refactoring
+
+* Fix package and code structure ([#2541](https://github.com/ThePotato97/revanced-patches/issues/2541)) ([a08457e](https://github.com/ThePotato97/revanced-patches/commit/a08457e406f4b2e37458a4835c11d370a02d2ce6))
+
+
+### Features
+
+* **Change package name:** Mention caveat of the patch in the description ([427b81a](https://github.com/ThePotato97/revanced-patches/commit/427b81a79a5a1de79f14d2261059fb098b22227f))
+* **ID Austria:** Remove constraint on any version ([#2526](https://github.com/ThePotato97/revanced-patches/issues/2526)) ([de2cb88](https://github.com/ThePotato97/revanced-patches/commit/de2cb886169b3963b9ed70154bde0b7c6baaae40))
+* **MyFitnessPal:** Add `Hide ads` patch ([#2594](https://github.com/ThePotato97/revanced-patches/issues/2594)) ([fd4b3c7](https://github.com/ThePotato97/revanced-patches/commit/fd4b3c79a83f8de6256611629263d3e29e66f2c2))
+* Support for `19.01.33` ([aefaa5f](https://github.com/ThePotato97/revanced-patches/commit/aefaa5f62d4705d5a297749ae5f94a836baf549e))
+* **Tiktok - Playback speed:** Remember playback speed ([#2506](https://github.com/ThePotato97/revanced-patches/issues/2506)) ([d2970e5](https://github.com/ThePotato97/revanced-patches/commit/d2970e54fbbd7e4b1ae1d354ae2d5c4bbe9336b0))
+* **YouTube - Change header:** Change to ReVanced borderless logo header by default ([#2512](https://github.com/ThePotato97/revanced-patches/issues/2512)) ([75f785d](https://github.com/ThePotato97/revanced-patches/commit/75f785d1ef6026cbbdf7073c10aace1b28d93a30))
+* **YouTube:** Improve patch descriptions ([#2519](https://github.com/ThePotato97/revanced-patches/issues/2519)) ([e8d1389](https://github.com/ThePotato97/revanced-patches/commit/e8d1389d3367b2fb688f0b85c136c512981b4fdc))
+* **YouTube:** Support version `18.49.36` ([1fc8f70](https://github.com/ThePotato97/revanced-patches/commit/1fc8f709e2d0f5391582c47e7e14e05bc2dd3f83))
+
+
+### BREAKING CHANGES
+
+* Various public APIs have changed names and packages or were removed entirely
+
 # [4.0.0-dev.9](https://github.com/ReVanced/revanced-patches/compare/v4.0.0-dev.8...v4.0.0-dev.9) (2024-01-11)
 
 
